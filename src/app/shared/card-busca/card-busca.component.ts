@@ -1,16 +1,11 @@
-import { Component } from '@angular/core';
-import { ContainerComponent } from '../container/container.component';
-import {MatCardModule} from '@angular/material/card';
-import {MatButtonModule} from '@angular/material/button';
-
+import { Component, Input } from '@angular/core';
+import { Promocao } from 'src/app/core/types/type';
 
 @Component({
   selector: 'app-card-busca',
-  standalone: true,
-  imports: [MatCardModule, MatButtonModule, ContainerComponent],
   templateUrl: './card-busca.component.html',
-  styleUrl: './card-busca.component.scss'
+  styleUrls: ['./card-busca.component.scss']
 })
 export class CardBuscaComponent {
-
+  @Input() promocao!: Promocao;
 }

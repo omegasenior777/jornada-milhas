@@ -1,15 +1,22 @@
 import { Component } from '@angular/core';
-import {MatIconModule} from '@angular/material/icon';
-import {MatButtonModule} from '@angular/material/button';
-import {MatToolbarModule} from '@angular/material/toolbar';
+import { Router } from '@angular/router';
+import { UserService } from 'src/app/autenticacao/services/user.service';
 
 @Component({
   selector: 'app-header',
-  standalone: true,
-  imports: [MatToolbarModule, MatButtonModule, MatIconModule],
   templateUrl: './header.component.html',
-  styleUrl: './header.component.scss'
+  styleUrls: ['./header.component.scss']
 })
 export class HeaderComponent {
 
+  constructor(
+    private userService: UserService,
+    private router: Router) {}
+
+  user$ = this.userService.retornarUser();
+
+  logout() {
+    this.userService.logout();
+    this.router.navigate(['auth/login']);
+  }
 }

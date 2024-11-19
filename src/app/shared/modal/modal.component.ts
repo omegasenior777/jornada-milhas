@@ -1,14 +1,13 @@
 import { Component } from '@angular/core';
-import {MatChipsModule} from '@angular/material/chips';
-import { BotaoControleComponent } from '../botao-controle/botao-controle.component';
+import { FormBuscaService } from 'src/app/shared/services/form-busca.service';
 
 @Component({
   selector: 'app-modal',
-  standalone: true,
-  imports: [MatChipsModule, BotaoControleComponent],
   templateUrl: './modal.component.html',
-  styleUrl: './modal.component.scss'
+  styleUrls: ['./modal.component.scss']
 })
 export class ModalComponent {
+  constructor (public formBuscaService: FormBuscaService) {
 
+  }
 }

@@ -2,7 +2,6 @@ import { Component, Input } from '@angular/core';
 
 @Component({
   selector: 'app-botao-controle',
-  standalone: true,
   templateUrl: './botao-controle.component.html',
   styleUrls: ['./botao-controle.component.scss']
 })
